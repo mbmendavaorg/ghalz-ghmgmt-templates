@@ -114,6 +114,21 @@ jobs:
           firstRunWhatIf: 'false'
           whatIfEnabled: 'true'
 
+      - name: 'Plan: Governance-Legacy'
+        uses: mbmendavaorg/ghalz-ghmgmt-templates/.github/actions/bicep-deploy@main
+        if: ${{ inputs.governance-legacy }}
+        with:
+          name: 'governance-legacy'
+          displayName: 'Governance-Legacy'
+          templateFilePath: 'templates/core/governance/mgmt-groups/legacy/main.bicep'
+          templateParametersFilePath: 'templates/core/governance/mgmt-groups/legacy/main.bicepparam'
+          subscriptionId: '${{ env.SUBSCRIPTION_ID_MANAGEMENT }}'
+          resourceGroupName: ''
+          location: '${{ env.LOCATION }}'
+          deploymentType: 'managementGroup'
+          firstRunWhatIf: 'false'
+          whatIfEnabled: 'true'
+
       - name: 'Plan: Governance-Landing Zones'
         uses: mbmendavaorg/ghalz-ghmgmt-templates/.github/actions/bicep-deploy@main
         if: ${{ inputs.governance-landingzones }}
@@ -294,6 +309,21 @@ jobs:
           firstRunWhatIf: 'false'
           whatIfEnabled: 'true'
 
+      - name: 'Plan: Governance-Legacy RBAC'
+        uses: mbmendavaorg/ghalz-ghmgmt-templates/.github/actions/bicep-deploy@main
+        if: ${{ inputs.governance-legacy-rbac }}
+        with:
+          name: 'governance-legacy-rbac'
+          displayName: 'Governance-Legacy RBAC'
+          templateFilePath: 'templates/core/governance/mgmt-groups/legacy/main-rbac.bicep'
+          templateParametersFilePath: 'templates/core/governance/mgmt-groups/legacy/main-rbac.bicepparam'
+          subscriptionId: '${{ env.SUBSCRIPTION_ID_MANAGEMENT }}'
+          resourceGroupName: ''
+          location: '${{ env.LOCATION }}'
+          deploymentType: 'managementGroup'
+          firstRunWhatIf: 'false'
+          whatIfEnabled: 'true'
+
       - name: 'Plan: Governance-Landing Zones RBAC'
         uses: mbmendavaorg/ghalz-ghmgmt-templates/.github/actions/bicep-deploy@main
         if: ${{ inputs.governance-landingzones-rbac }}
@@ -387,6 +417,19 @@ jobs:
           displayName: 'Governance-Intermediate Root'
           templateFilePath: 'templates/core/governance/mgmt-groups/int-root/main.bicep'
           templateParametersFilePath: 'templates/core/governance/mgmt-groups/int-root/main.bicepparam'
+          subscriptionId: '${{ env.SUBSCRIPTION_ID_MANAGEMENT }}'
+          resourceGroupName: ''
+          location: '${{ env.LOCATION }}'
+          deploymentType: 'managementGroup'
+
+      - name: 'Deploy: Governance-Legacy'
+        uses: mbmendavaorg/ghalz-ghmgmt-templates/.github/actions/bicep-deploy@main
+        if: ${{ inputs.governance-legacy }}
+        with:
+          name: 'governance-legacy'
+          displayName: 'Governance-Legacy'
+          templateFilePath: 'templates/core/governance/mgmt-groups/legacy/main.bicep'
+          templateParametersFilePath: 'templates/core/governance/mgmt-groups/legacy/main.bicepparam'
           subscriptionId: '${{ env.SUBSCRIPTION_ID_MANAGEMENT }}'
           resourceGroupName: ''
           location: '${{ env.LOCATION }}'
@@ -543,6 +586,19 @@ jobs:
           displayName: 'Governance-Platform Connectivity RBAC'
           templateFilePath: 'templates/core/governance/mgmt-groups/platform/platform-connectivity/main-rbac.bicep'
           templateParametersFilePath: 'templates/core/governance/mgmt-groups/platform/platform-connectivity/main-rbac.bicepparam'
+          subscriptionId: '${{ env.SUBSCRIPTION_ID_MANAGEMENT }}'
+          resourceGroupName: ''
+          location: '${{ env.LOCATION }}'
+          deploymentType: 'managementGroup'
+
+      - name: 'Deploy: Governance-Legacy RBAC'
+        uses: mbmendavaorg/ghalz-ghmgmt-templates/.github/actions/bicep-deploy@main
+        if: ${{ inputs.governance-legacy-rbac }}
+        with:
+          name: 'governance-legacy-rbac'
+          displayName: 'Governance-Legacy Zones RBAC'
+          templateFilePath: 'templates/core/governance/mgmt-groups/legacy/main-rbac.bicep'
+          templateParametersFilePath: 'templates/core/governance/mgmt-groups/legacy/main-rbac.bicepparam'
           subscriptionId: '${{ env.SUBSCRIPTION_ID_MANAGEMENT }}'
           resourceGroupName: ''
           location: '${{ env.LOCATION }}'

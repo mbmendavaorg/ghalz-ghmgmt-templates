@@ -91,6 +91,20 @@ jobs:
           firstRunWhatIf: 'false'
           whatIfEnabled: 'true'
 
+      - name: 'What If: Governance-Legacy'
+        uses: mbmendavaorg/ghalz-ghmgmt-templates/.github/actions/bicep-deploy@main
+        with:
+          name: 'governance-legacy'
+          displayName: 'Governance-Legacy'
+          templateFilePath: 'templates/core/governance/mgmt-groups/legacy/main.bicep'
+          templateParametersFilePath: 'templates/core/governance/mgmt-groups/legacy/main.bicepparam'
+          subscriptionId: '${{ env.SUBSCRIPTION_ID_MANAGEMENT }}'
+          resourceGroupName: ''
+          location: '${{ env.LOCATION }}'
+          deploymentType: 'managementGroup'
+          firstRunWhatIf: 'false'
+          whatIfEnabled: 'true'
+
       - name: 'What If: Governance-Landing Zones'
         uses: mbmendavaorg/ghalz-ghmgmt-templates/.github/actions/bicep-deploy@main
         with:
@@ -252,6 +266,20 @@ jobs:
           displayName: 'Governance-Platform Connectivity RBAC'
           templateFilePath: 'templates/core/governance/mgmt-groups/platform/platform-connectivity/main-rbac.bicep'
           templateParametersFilePath: 'templates/core/governance/mgmt-groups/platform/platform-connectivity/main-rbac.bicepparam'
+          subscriptionId: '${{ env.SUBSCRIPTION_ID_MANAGEMENT }}'
+          resourceGroupName: ''
+          location: '${{ env.LOCATION }}'
+          deploymentType: 'managementGroup'
+          firstRunWhatIf: 'false'
+          whatIfEnabled: 'true'
+
+      - name: 'What If: Governance-Legacy RBAC'
+        uses: mbmendavaorg/ghalz-ghmgmt-templates/.github/actions/bicep-deploy@main
+        with:
+          name: 'governance-legacy-rbac'
+          displayName: 'Governance-Legacy RBAC'
+          templateFilePath: 'templates/core/governance/mgmt-groups/legacy/main-rbac.bicep'
+          templateParametersFilePath: 'templates/core/governance/mgmt-groups/legacy/main-rbac.bicepparam'
           subscriptionId: '${{ env.SUBSCRIPTION_ID_MANAGEMENT }}'
           resourceGroupName: ''
           location: '${{ env.LOCATION }}'
