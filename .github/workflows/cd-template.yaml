@@ -9,6 +9,9 @@ on:
       governance-int-root:
         type: boolean
         default: true
+      governance-legacy:
+        type: boolean
+        default: true
       governance-landingzones:
         type: boolean
         default: true
@@ -43,6 +46,9 @@ on:
         type: boolean
         default: true
       governance-platform-connectivity-rbac:
+        type: boolean
+        default: true
+      governance-legacy-rbac:
         type: boolean
         default: true
       governance-landingzones-rbac:
