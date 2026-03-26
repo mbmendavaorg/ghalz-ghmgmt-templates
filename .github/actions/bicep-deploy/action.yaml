@@ -166,7 +166,7 @@ runs:
           } else {
             # Deployment Stack mode - actual deployment
             $stackParameters = @{
-              Name                  = $deploymentName
+              Name                  = "$($deploymentName)-v2"
               TemplateFile          = $env:TEMPLATE_FILE_PATH
               TemplateParameterFile = $env:TEMPLATE_PARAMETERS_FILE_PATH
               DenySettingsMode      = "None"
